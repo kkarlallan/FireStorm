@@ -2,7 +2,7 @@ version: "3.7"
 services:
     app:
         build: .
-        command: npm install --also=dev
+        command: npm run dev
         volumes: 
             - ./:/app
         container_name: app_server
@@ -13,5 +13,8 @@ services:
         container_name: postgresql_server
         volumes: 
             - ./docker_secrets:/run/secrets
+            - ./db_data:/VAR/LIB/POSTGRESQL/DATA
+        ports: 
+            - 5432:5432
         environment: 
             - POSTGRES_PASSWORD_FILE=/run/secrets/postgres-password
