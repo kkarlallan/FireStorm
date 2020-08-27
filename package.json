@@ -1,0 +1,32 @@
+{
+  "name": "firestorm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "jest --coverage",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kkarlallan/FireStorm.git"
+  },
+  "author": "Karl Allan Kho",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kkarlallan/FireStorm/issues"
+  },
+  "homepage": "https://github.com/kkarlallan/FireStorm#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.7.0",
+    "nodemon": "^2.0.4"
+  }
+}
