@@ -1,17 +1,17 @@
+version: "3.7"
 services:
     app:
-        image: node:12-alpine
-        command: sh -c "yarn install && yarn run dev"
-        ports:
-            - 3000:3000
-        working_dir: /app
+        build: .
+        command: npm install --also=dev
         volumes: 
-            - ./:/app    
-        environment: 
-            
-        
+            - ./:/app
+        container_name: app_server
+        ports: 
+            - 3000:3000
     postgresql:
-        image: postgresql
-
-        
-        
+        image: postgres:12-alpine
+        container_name: postgresql_server
+        volumes: 
+            - ./docker_secrets:/run/secrets
+        environment: 
+            - POSTGRES_PASSWORD_FILE=/run/secrets/postgres-password
